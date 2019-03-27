@@ -1,5 +1,5 @@
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
+#variable "aws_access_key" {}
+#variable "aws_secret_key" {}
 variable "aws_region" {}
 variable "amis" {
     description = "AMIs by region"
@@ -32,9 +32,9 @@ variable "environment" { default = "dev" }
 variable "instance_type" {
   type = "map"
   default = {
-    dev = "t2.nano"
-    test = "t2.micro"
-    prod = "t2.medium"
+   # dev = "t2.nano"
+    dev = "t2.micro"
+    #prod = "t2.medium"
     }
 }
 

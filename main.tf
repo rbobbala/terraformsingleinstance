@@ -1,7 +1,8 @@
 provider "aws" {
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_secret_key}"
+   # access_key = "${var.aws_access_key}"
+   # secret_key = "${var.aws_secret_key}"
     region = "${var.aws_region}"
+profile="default"
 }
 
 resource "aws_vpc" "default" {
@@ -89,18 +90,12 @@ resource "aws_security_group" "allow_all" {
     }
 }
 
-data "aws_ami" "my_ami" {
-      most_recent      = true
-      #name_regex       = "^mavrick"
-      owners           = ["053490018989"]
-}
 
-
-resource "aws_instance" "web-1" {
-    ami = "${data.aws_ami.my_ami.id}"
+resource "aws_instance" "kranthiweb" {
+    ami = "ami-0080e4c5bc078760e"
     availability_zone = "us-east-1a"
-    instance_type = "t2.nano"
-    key_name = "LaptopKey"
+    instance_type = "t2.micro"
+    key_name = "Regular Key"
     subnet_id = "${aws_subnet.subnet1-public.id}"
     vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
     associate_public_ip_address = true	
@@ -110,9 +105,4 @@ resource "aws_instance" "web-1" {
         Owner = "Sree"
     }
 }
-
-output "ami_id" {
-  value = "${data.aws_ami.my_ami.id}"
-}
-
 
