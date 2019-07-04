@@ -102,7 +102,7 @@ resource "aws_instance" "kranthiweb" {
     tags {
         Name = "Server-${count.index}"
         Env = "Prod"
-        Owner = "Sree"
+        Owner = "kranthi"
     }
 }
 
