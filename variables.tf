@@ -1,6 +1,6 @@
-#variable "aws_access_key" {}
-#variable "aws_secret_key" {}
-variable "aws_region" {}
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
+variable "aws_region" {default = "us-east-1"}
 variable "amis" {
     description = "AMIs by region"
     default = {
@@ -10,18 +10,18 @@ variable "amis" {
 		us-west-2 = "ami-f2d3638a" # ubuntu 14.04 LTS
     }
 }
-variable "vpc_cidr" {}
-variable "vpc_name" {}
-variable "IGW_name" {}
-variable "key_name" {}
-variable "public_subnet1_cidr" {}
-variable "public_subnet2_cidr" {}
-variable "public_subnet3_cidr" {}
-variable "private_subnet_cidr" {}
-variable "public_subnet1_name" {}
-variable "public_subnet2_name" {}
-variable "public_subnet3_name" {}
-variable "private_subnet_name" {}
+variable "vpc_cidr" {default = "10.1.0.0/16"}
+variable "vpc_name" {default = "tf vpc"}
+variable "IGW_name" {default = "tf IGW"}
+variable "key_name" {default = "bhavya"}
+variable "public_subnet1_cidr" {default = "10.1.1.0/24"}
+variable "public_subnet2_cidr" {default = "10.1.2.0/24"}
+variable "public_subnet3_cidr" {default = "10.1.3.0/24"}
+variable "private_subnet_cidr" {default = "10.1.4.0/24"}
+variable "public_subnet1_name" {default = "n1"}
+variable "public_subnet2_name" {default = "n2"}
+variable "public_subnet3_name" {default = "n3"}
+variable "private_subnet_name" {default = "n4"}
 variable Main_Routing_Table {}
 variable "azs" {
   description = "Run the EC2 Instances in these Availability Zones"
@@ -37,5 +37,3 @@ variable "instance_type" {
     #prod = "t2.medium"
     }
 }
-
-
