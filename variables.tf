@@ -13,7 +13,7 @@ variable "amis" {
 variable "vpc_cidr" {default = "10.1.0.0/16"}
 variable "vpc_name" {default = "tf vpc"}
 variable "IGW_name" {default = "tf IGW"}
-variable "key_name" {default = "bhavya"}
+variable "key_name" {default = "kranthi1"}
 variable "public_subnet1_cidr" {default = "10.1.1.0/24"}
 variable "public_subnet2_cidr" {default = "10.1.2.0/24"}
 variable "public_subnet3_cidr" {default = "10.1.3.0/24"}
@@ -22,7 +22,7 @@ variable "public_subnet1_name" {default = "n1"}
 variable "public_subnet2_name" {default = "n2"}
 variable "public_subnet3_name" {default = "n3"}
 variable "private_subnet_name" {default = "n4"}
-variable Main_Routing_Table {}
+variable "Main_Routing_Table" {default = "Main Routing table"}
 variable "azs" {
   description = "Run the EC2 Instances in these Availability Zones"
   type = "list"
