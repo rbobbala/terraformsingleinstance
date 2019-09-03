@@ -99,6 +99,7 @@ resource "aws_instance" "kranthiweb" {
     subnet_id = "${aws_subnet.subnet1-public.id}"
     vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
     associate_public_ip_address = true	
+	user_data = "${file("install_apache.sh")}"
     tags = {
       Name = "Server-TF"
       Env = "Prod"
