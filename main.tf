@@ -91,7 +91,7 @@ resource "aws_security_group" "allow_all" {
 }
 
 
-resource "aws_instance" "kranthiweb" {
+resource "aws_instance" "tomcat-server" {
     ami = "ami-0080e4c5bc078760e"
     availability_zone = "us-east-1a"
     instance_type = "t2.micro"
